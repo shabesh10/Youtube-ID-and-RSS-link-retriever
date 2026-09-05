@@ -1,16 +1,15 @@
-# React + Vite
+# Channel ID + RSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React and Node.js tool that accepts YouTube channel URLs and retrieves the channel ID and RSS feed URL from each channel page.
 
-Currently, two official plugins are available:
+Production site: [youtube-channel-id-rss.netlify.app](https://youtube-channel-id-rss.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How it works
 
-## React Compiler
+1. Paste one or more YouTube channel URLs into the textarea, one URL per line.
+2. Click **Get ID + RSS**.
+3. The React app sends the URLs to `POST /api/retrieve`.
+4. The Node.js server fetches each page and parses its RSS `<link>` tag.
+5. The UI displays the RSS URL and the channel ID extracted from its `channel_id` query parameter.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The RSS and channel ID values are displayed as plain text, with separate copy buttons.
