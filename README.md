@@ -9,7 +9,7 @@ Production site: [youtube-channel-id-rss.netlify.app](https://youtube-channel-id
 1. Paste one or more YouTube channel URLs into the textarea, one URL per line.
 2. Click **Get ID + RSS**.
 3. The React app sends the URLs to `POST /api/retrieve`.
-4. The Node.js server fetches each page and parses its RSS `<link>` tag.
+4. The Netlify Function fetches each page and parses its RSS `<link>` tag.
 5. The UI displays the RSS URL and the channel ID extracted from its `channel_id` query parameter.
 
 The RSS and channel ID values are displayed as plain text, with separate copy buttons.
