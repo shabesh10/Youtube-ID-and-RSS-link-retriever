@@ -73,35 +73,35 @@ function App() {
   return (
     <main className="app-shell">
       <header className="topbar">
-        <a className="brand" href="/" aria-label="Channel ID and RSS home">
+        <a className="brand" href="/" aria-label="RSS feed and ID home">
           <span className="brand-mark" aria-hidden="true">
             <span />
           </span>
-          <span>channel id + rss</span>
+          <span>rss feed + id</span>
         </a>
         <span className="status-pill">
-          <span className="status-dot" /> ready to resolve
+          <span className="status-dot" /> rss-first resolver
         </span>
       </header>
       <section className="hero-section">
         <div className="eyebrow">
-          <span /> CHANNEL ID + RSS TOOL
+          <span /> RSS FEED + ID TOOL
         </div>
         <h1>
-          Get the ID.
+          Find the feed.
           <br />
-          <em>Build the feed.</em>
+          <em>Get the ID too.</em>
         </h1>
         <p className="intro">
-          Paste one or more YouTube channel URLs to retrieve each channel's ID
-          and RSS feed link.
+          Paste one or more YouTube channel URLs to resolve each channel's RSS
+          feed first. The channel ID is included as a secondary result.
         </p>
         <form className="channel-form" onSubmit={handleSubmit}>
           <div className="form-heading">
             <div>
               <div>
                 <h2>YouTube channels</h2>
-                <p>Paste one URL per line to retrieve each ID and RSS link.</p>
+                <p>Paste one URL per line to find each RSS feed and ID.</p>
               </div>
             </div>
             <span className="source-count">
@@ -124,14 +124,14 @@ function App() {
           <div className="form-footer">
             <div className="privacy-note">
               <span className="lock-icon" aria-hidden="true">⌑</span>{" "}
-              Fetched securely by the RSS resolver
+              Secure RSS lookup with ID extraction
             </div>
             <button
               className="retrieve-button"
               type="submit"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Retrieving..." : "Get ID + RSS"}
+              {isSubmitting ? "Resolving..." : "Get RSS + ID"}
               {!isSubmitting && <span aria-hidden="true">↗</span>}
             </button>
           </div>
@@ -160,7 +160,7 @@ function App() {
       </section>
       <footer className="footer">
         <span>© 2026 Shabeshvaran</span>
-        <span>Simple IDs. Direct feeds.</span>
+        <span>RSS first. ID second.</span>
       </footer>
     </main>
   );
